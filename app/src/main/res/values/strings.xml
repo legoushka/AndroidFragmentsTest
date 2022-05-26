@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AndroidFragmentsTest</string>
+    <string name="toolBarTitle">Navigation</string>
 </resources>
