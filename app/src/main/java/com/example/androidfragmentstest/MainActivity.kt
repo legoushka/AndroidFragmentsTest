@@ -16,16 +16,27 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setSupportActionBar(binding.toolbar)
+        //setSupportActionBar(binding.toolbar)
 
         if (savedInstanceState == null){
-            
+            val fragment = CounterFragment.newInstance(
+                counterValue = 1,
+                quote = createQuote()
+            )
+            supportFragmentManager
+                .beginTransaction()
+                .add(R.id.fragmentContainer, fragment)
+                .commit()
         }
     }
 
 
     fun createQuote() : String {
         return faker.harryPotter().quote()
+    }
+
+    fun getScreensCount(): Int {
+        return supportFragmentManager.backStackEntryCount + 1
     }
 
 
