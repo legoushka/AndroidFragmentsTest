@@ -17,6 +17,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setSupportActionBar(binding.toolbar)
-        
+
+        if (savedInstanceState == null){
+            
+        }
     }
+
+
+    fun createQuote() : String {
+        return faker.harryPotter().quote()
+    }
+
+
 }
